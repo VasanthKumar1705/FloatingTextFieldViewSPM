@@ -10,8 +10,5 @@ public struct FloatingTextFieldViewSPM {
         
     }
     
-    public lazy var floatTextField : UIView = {
-        let view = floatingTextFieldView()
-        return view
-    }()
+    
 }

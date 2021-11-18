@@ -20,7 +20,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FloatingTextFieldViewSPM",
-            resources: [.process("Resources/floatingTextFieldView.xib")]
+            resources: [.process("Resources")]
         ),
         .testTarget(
             name: "FloatingTextFieldViewSPMTests",
