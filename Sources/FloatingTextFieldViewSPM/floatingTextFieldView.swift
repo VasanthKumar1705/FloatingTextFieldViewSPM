@@ -43,7 +43,7 @@ public class floatingTextFieldView : UIView {
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
-        FloatingTextFieldheight.constant = 50
+        FloatingTextFieldheight.constant = 45
         FloatingTextField.autocorrectionType = .no
         passwordVisiblityButton.isHidden = true
         errorlabel.isHidden = true
@@ -111,7 +111,7 @@ public class floatingTextFieldView : UIView {
     }
    public func clearAll(){
         FloatingTextField.text = ""
-        FloatingTextFieldheight.constant = 50
+        FloatingTextFieldheight.constant = 45
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
