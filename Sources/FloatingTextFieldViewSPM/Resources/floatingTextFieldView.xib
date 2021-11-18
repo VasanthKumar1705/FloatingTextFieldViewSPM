@@ -58,7 +58,6 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="E4h-Yl-OdZ" firstAttribute="centerY" secondItem="QB7-We-EMt" secondAttribute="centerY" id="7v6-KS-H9h"/>
-                        <constraint firstItem="RUI-SY-auJ" firstAttribute="top" secondItem="QB7-We-EMt" secondAttribute="top" constant="22" id="AGs-xO-KQl"/>
                         <constraint firstAttribute="bottom" secondItem="RUI-SY-auJ" secondAttribute="bottom" constant="6" id="C8k-VF-iVP"/>
                         <constraint firstAttribute="trailing" secondItem="E4h-Yl-OdZ" secondAttribute="trailing" constant="10" id="N6q-Y8-gxX"/>
                         <constraint firstItem="8aE-Ge-G0I" firstAttribute="leading" secondItem="QB7-We-EMt" secondAttribute="leading" constant="16" id="TTJ-kn-FKf"/>
