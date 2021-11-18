@@ -57,6 +57,7 @@ public class floatingTextFieldView : UIView {
         FloatingPlaceholderLabel.font = UIFont.latoRegular12 ?? UIFont.systemFont(ofSize: 12)
         FloatingPlaceholderLabel.textColor = UIColor.grey600
         FloatingTextField.textColor = UIColor.grey800
+        FloatingTextField.font = UIFont.latoRegular16 ?? UIFont.systemFont(ofSize: 16)
         
     }
     
