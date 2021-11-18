@@ -40,12 +40,18 @@ public class floatingTextFieldView : UIView {
     func setup() {
         contentView.layer.borderColor = UIColor.black.cgColor
         contentView.layer.borderWidth = 1
-        contentView.layer.cornerRadius = 15
+        contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
         FloatingTextFieldheight.constant = 50
         passwordVisiblityButton.isHidden = true
         errorlabel.isHidden = true
         
+    }
+    
+    public func setup(errorText:String ,placeholder:String){
+        errorlabel.text = errorText
+        FloatingPlaceholderLabel.text = placeholder
+        FloatingTextField.text = placeholder
     }
 
     func showFloatinglabel(){
