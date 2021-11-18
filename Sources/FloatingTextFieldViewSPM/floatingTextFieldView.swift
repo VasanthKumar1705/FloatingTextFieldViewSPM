@@ -17,10 +17,10 @@ public class floatingTextFieldView : UIView {
     
     @IBOutlet var FloatingPlaceholderLabel: UILabel!
     
-    public var myTextField : UITextField = {
-        let textfield = floatingTextFieldView().FloatingTextField
-        return textfield!
-    }()
+//    public var myTextField : UITextField = {
+//        let textfield = floatingTextFieldView().FloatingTextField
+//        return textfield!
+//    }()
     override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
