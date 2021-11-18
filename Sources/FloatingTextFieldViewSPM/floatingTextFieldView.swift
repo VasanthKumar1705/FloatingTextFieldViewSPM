@@ -39,7 +39,7 @@ public class floatingTextFieldView : UIView {
         }
     
     func setup() {
-        contentView.layer.borderColor = UIColor.borderColor2
+        contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
@@ -50,14 +50,14 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingTextField.placeholder ?? "placehoder",
             attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.grey600,
-                NSAttributedString.Key.font: UIFont.latoRegular16 ?? UIFont.systemFont(ofSize: 16)
+                NSAttributedString.Key.foregroundColor: UIColor.gray,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)
             ]
         )
-        FloatingPlaceholderLabel.font = UIFont.latoRegular12 ?? UIFont.systemFont(ofSize: 12)
-        FloatingPlaceholderLabel.textColor = UIColor.grey600
-        FloatingTextField.textColor = UIColor.grey800
-        FloatingTextField.font = UIFont.latoRegular16 ?? UIFont.systemFont(ofSize: 16)
+        FloatingPlaceholderLabel.font =  UIFont.systemFont(ofSize: 12)
+        FloatingPlaceholderLabel.textColor = UIColor.darkGray
+        FloatingTextField.textColor = UIColor.gray
+        FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
         FloatingPlaceholderLabel.isHidden = true
         
     }
