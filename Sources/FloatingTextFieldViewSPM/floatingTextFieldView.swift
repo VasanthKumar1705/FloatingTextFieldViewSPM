@@ -17,10 +17,7 @@ public class floatingTextFieldView : UIView {
     
     @IBOutlet var FloatingPlaceholderLabel: UILabel!
     
-    public var myTextField : UITextField = {
-        let textfield = floatingTextFieldView().FloatingTextField
-        return textfield!
-    }()
+   
     override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -55,9 +52,10 @@ public class floatingTextFieldView : UIView {
     public func setup(errorText:String ,placeholder:String){
         errorlabel.text = errorText
         FloatingPlaceholderLabel.text = placeholder
+        FloatingTextField.placeholder = placeholder
     }
 
-    func showFloatinglabel(){
+   public func showFloatinglabel(){
         FloatingTextFieldheight.constant = 33
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
@@ -66,7 +64,7 @@ public class floatingTextFieldView : UIView {
     }
   
     
-    func validation(){
+   public func validation(){
         if FloatingTextField.text == "" {
             print("Password is empty")
             FloatingPlaceholderLabel.textColor = .red
@@ -85,7 +83,7 @@ public class floatingTextFieldView : UIView {
         FloatingTextFieldheight.constant = 33
     }
     
-    func successValidation(){
+   public func successValidation(){
         print("Password is empty")
         FloatingPlaceholderLabel.textColor = .red
         FloatingTextField.attributedPlaceholder = NSAttributedString(
@@ -96,14 +94,14 @@ public class floatingTextFieldView : UIView {
         errorlabel.isHidden = false
         FloatingTextFieldheight.constant = 33
     }
-    func failureValidation() {
+  public  func failureValidation() {
         print("Password is filled")
         FloatingPlaceholderLabel.textColor = .black
         contentView.layer.borderColor = UIColor.black.cgColor
         errorlabel.isHidden = true
         FloatingTextFieldheight.constant = 33
     }
-    func clearAll(){
+   public func clearAll(){
         FloatingTextField.text = ""
         FloatingTextFieldheight.constant = 50
         FloatingTextField.attributedPlaceholder = NSAttributedString(
