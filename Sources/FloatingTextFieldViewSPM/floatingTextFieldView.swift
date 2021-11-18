@@ -29,7 +29,11 @@ public class floatingTextFieldView : UIView {
  
         func commonInit() {
             // standard initialization logic
-            let nib = Bundle.main.loadNibNamed("floatingTextFieldView", owner: self, options: nil)![0] as! UIView
+//            let nib = Bundle.main.loadNibNamed("floatingTextFieldView", owner: self, options: nil)![0] as! UIView
+//            if let fontLocation = Bundle.module.url(forResource: $0, withExtension: "ttf") {
+//                registerFont(from: fontLocation)
+//            }
+            let nib = Bundle.module.loadNibNamed("floatingTextFieldView", owner: self, options: nil)![0] as! UIView
             nib.frame = self.bounds
             setup()
             addSubview(nib)
