@@ -15,7 +15,7 @@ public class floatingTextFieldView : UIView {
     @IBOutlet public var passwordVisiblityButton: UIButton!
     @IBOutlet public var FloatingTextField: UITextField!
     
-    @IBOutlet var FloatingPlaceholderLabel: UILabel!
+    @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
    
     override init(frame: CGRect) {
