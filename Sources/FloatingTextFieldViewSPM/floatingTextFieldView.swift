@@ -55,6 +55,10 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.placeholder = placeholder
     }
 
+    public func test_TextField() -> UITextField {
+        let field = FloatingTextField
+        return field!
+    }
    public func showFloatinglabel(){
         FloatingTextFieldheight.constant = 33
         FloatingTextField.attributedPlaceholder = NSAttributedString(
