@@ -39,11 +39,13 @@ public class floatingTextFieldView : UIView {
         }
     
     func setup() {
-        contentView.layer.borderColor = UIColor.black.cgColor
+        let borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1).cgColor
+        contentView.layer.borderColor = borderColor
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
         FloatingTextFieldheight.constant = 50
+        FloatingTextField.autocorrectionType = .no
         passwordVisiblityButton.isHidden = true
         errorlabel.isHidden = true
         
