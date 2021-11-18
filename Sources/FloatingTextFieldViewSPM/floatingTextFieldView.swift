@@ -43,7 +43,7 @@ public class floatingTextFieldView : UIView {
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
-        FloatingTextFieldheight.constant = 50
+        FloatingTextFieldheight.constant = 52
         FloatingTextField.autocorrectionType = .no
         passwordVisiblityButton.isHidden = true
         errorlabel.isHidden = true
@@ -64,7 +64,7 @@ public class floatingTextFieldView : UIView {
   
   
    public func showFloatinglabel(){
-        FloatingTextFieldheight.constant = 33
+        FloatingTextFieldheight.constant = 24
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -88,7 +88,7 @@ public class floatingTextFieldView : UIView {
             contentView.layer.borderColor = UIColor.black.cgColor
             errorlabel.isHidden = true
         }
-        FloatingTextFieldheight.constant = 33
+        FloatingTextFieldheight.constant = 24
     }
     
    public func successValidation(){
@@ -100,18 +100,18 @@ public class floatingTextFieldView : UIView {
         )
         contentView.layer.borderColor = UIColor.red.cgColor
         errorlabel.isHidden = false
-        FloatingTextFieldheight.constant = 33
+        FloatingTextFieldheight.constant = 24
     }
   public  func failureValidation() {
         print("Password is filled")
         FloatingPlaceholderLabel.textColor = .black
         contentView.layer.borderColor = UIColor.black.cgColor
         errorlabel.isHidden = true
-        FloatingTextFieldheight.constant = 33
+        FloatingTextFieldheight.constant = 24
     }
    public func clearAll(){
         FloatingTextField.text = ""
-        FloatingTextFieldheight.constant = 50
+        FloatingTextFieldheight.constant = 52
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
