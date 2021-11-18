@@ -39,8 +39,7 @@ public class floatingTextFieldView : UIView {
         }
     
     func setup() {
-        let borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1).cgColor
-        contentView.layer.borderColor = borderColor
+        contentView.layer.borderColor = UIColor.borderColor2
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
@@ -48,6 +47,13 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.autocorrectionType = .no
         passwordVisiblityButton.isHidden = true
         errorlabel.isHidden = true
+        FloatingTextField.attributedPlaceholder = NSAttributedString(
+            string: FloatingTextField.placeholder ?? "placehoder",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.grey600,
+                NSAttributedString.Key.font: UIFont.latoRegular16 ?? UIFont.systemFont(ofSize: 16)
+            ]
+        )
         
     }
     
