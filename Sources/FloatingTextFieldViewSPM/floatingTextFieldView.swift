@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 public class floatingTextFieldView : UIView {
-    @IBOutlet public var errorlabel: UILabel! 
-    @IBOutlet var FloatingTextFieldheight: NSLayoutConstraint!
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var passwordVisiblityButton: UIButton!
-    @IBOutlet var FloatingTextField: UITextField!
+    @IBOutlet public var errorlabel: UILabel!
+    @IBOutlet public var FloatingTextFieldheight: NSLayoutConstraint!
+    @IBOutlet public var contentView: UIView!
+    @IBOutlet public var passwordVisiblityButton: UIButton!
+    @IBOutlet public var FloatingTextField: UITextField!
     
     @IBOutlet var FloatingPlaceholderLabel: UILabel!
     
@@ -49,16 +49,8 @@ public class floatingTextFieldView : UIView {
         
     }
     
-    public func setup(errorText:String ,placeholder:String){
-        errorlabel.text = errorText
-        FloatingPlaceholderLabel.text = placeholder
-        FloatingTextField.placeholder = placeholder
-    }
-
-    public func test_TextField() -> UITextField {
-        let field = FloatingTextField
-        return field!
-    }
+  
+  
    public func showFloatinglabel(){
         FloatingTextFieldheight.constant = 33
         FloatingTextField.attributedPlaceholder = NSAttributedString(
