@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class floatingTextFieldView : UIView {
+public class floatingTextFieldView : UIView {
     @IBOutlet var errorlabel: UILabel!
     @IBOutlet var FloatingTextFieldheight: NSLayoutConstraint!
     @IBOutlet var contentView: UIView!

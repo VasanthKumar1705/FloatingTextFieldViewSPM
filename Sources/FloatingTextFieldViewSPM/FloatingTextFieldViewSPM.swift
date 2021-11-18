@@ -9,6 +9,8 @@ public struct FloatingTextFieldViewSPM {
         print("successfully call the nib...")
         
     }
-    
+    public var TextField = floatingTextFieldView()
     
 }
+
+
