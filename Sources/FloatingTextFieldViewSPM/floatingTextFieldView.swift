@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public class floatingTextFieldView : UIView {
-    @IBOutlet var errorlabel: UILabel!
+    @IBOutlet public var errorlabel: UILabel! 
     @IBOutlet var FloatingTextFieldheight: NSLayoutConstraint!
     @IBOutlet var contentView: UIView!
     @IBOutlet var passwordVisiblityButton: UIButton!
