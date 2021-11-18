@@ -17,6 +17,10 @@ public class floatingTextFieldView : UIView {
     
     @IBOutlet var FloatingPlaceholderLabel: UILabel!
     
+    public var myTextField : UITextField = {
+        let textfield = floatingTextFieldView().FloatingTextField
+        return textfield!
+    }()
     override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -51,7 +55,6 @@ public class floatingTextFieldView : UIView {
     public func setup(errorText:String ,placeholder:String){
         errorlabel.text = errorText
         FloatingPlaceholderLabel.text = placeholder
-        FloatingTextField.text = placeholder
     }
 
     func showFloatinglabel(){
@@ -110,5 +113,31 @@ public class floatingTextFieldView : UIView {
         errorlabel.isHidden = true
         FloatingPlaceholderLabel.textColor = .black
         contentView.layer.borderColor = UIColor.gray.cgColor
+    }
+    
+    public func delegateTextField(myTextField:UITextField){
+        if myTextField == nametextFieldView.FloatingTextField {
+            if passTextFieldView.FloatingTextField.text == "" {
+                passTextFieldView.clearAll()
+            }
+            if emailTextFieldView.FloatingTextField.text == "" {
+                emailTextFieldView.clearAll()
+            }
+            
+        }else if myTextField == passTextFieldView.FloatingTextField{
+            if nametextFieldView.FloatingTextField.text == "" {
+                nametextFieldView.clearAll()
+            }
+            if emailTextFieldView.FloatingTextField.text == "" {
+                emailTextFieldView.clearAll()
+            }
+        }else {
+            if nametextFieldView.FloatingTextField.text == "" {
+                nametextFieldView.clearAll()
+            }
+            if passTextFieldView.FloatingTextField.text == "" {
+                passTextFieldView.clearAll()
+            }
+        }
     }
 }
