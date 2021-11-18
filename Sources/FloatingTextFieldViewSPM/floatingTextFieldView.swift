@@ -115,29 +115,5 @@ public class floatingTextFieldView : UIView {
         contentView.layer.borderColor = UIColor.gray.cgColor
     }
     
-    public func delegateTextField(myTextField:UITextField){
-        if myTextField == nametextFieldView.FloatingTextField {
-            if passTextFieldView.FloatingTextField.text == "" {
-                passTextFieldView.clearAll()
-            }
-            if emailTextFieldView.FloatingTextField.text == "" {
-                emailTextFieldView.clearAll()
-            }
-            
-        }else if myTextField == passTextFieldView.FloatingTextField{
-            if nametextFieldView.FloatingTextField.text == "" {
-                nametextFieldView.clearAll()
-            }
-            if emailTextFieldView.FloatingTextField.text == "" {
-                emailTextFieldView.clearAll()
-            }
-        }else {
-            if nametextFieldView.FloatingTextField.text == "" {
-                nametextFieldView.clearAll()
-            }
-            if passTextFieldView.FloatingTextField.text == "" {
-                passTextFieldView.clearAll()
-            }
-        }
-    }
+    
 }
