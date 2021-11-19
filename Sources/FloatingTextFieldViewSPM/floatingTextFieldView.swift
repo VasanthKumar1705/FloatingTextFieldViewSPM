@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+public enum FieldType {
+    case normal
+    case numberPad
+    case email
+    case URL
+    case number
+}
+
 public class floatingTextFieldView : UIView {
     @IBOutlet public var errorlabel: UILabel!
     @IBOutlet public var FloatingTextFieldheight: NSLayoutConstraint!
@@ -17,7 +25,7 @@ public class floatingTextFieldView : UIView {
     
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
-   
+    public var FieldType : FieldType!
    public override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -60,6 +68,22 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
         FloatingPlaceholderLabel.isHidden = true
         
+        if FieldType == .normal {
+            print("----> normal field")
+            
+        }
+        else if FieldType == .URL {
+            print("----> URL field")
+        }
+        else if FieldType == .email {
+            print("----> email field")
+        }
+        else if FieldType == .numberPad {
+            print("----> numberpad field")
+        }
+        else if FieldType == .number{
+            print("----> number field")
+        }
     }
     
   
