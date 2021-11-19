@@ -98,6 +98,7 @@ public class floatingTextFieldView : UIView {
         else if type == .password{
             print("----> password field")
             FloatingTextField.isSecureTextEntry = true
+            passwordVisiblityButton.isHidden = false
         }
         FloatingTextField.autocorrectionType = .no
         FloatingTextField.autocapitalizationType = .none
