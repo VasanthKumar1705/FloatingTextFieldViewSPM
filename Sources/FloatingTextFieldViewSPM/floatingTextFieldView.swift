@@ -14,6 +14,7 @@ public enum FieldType {
     case email
     case URL
     case number
+    case password
 }
 
 public class floatingTextFieldView : UIView {
@@ -74,13 +75,17 @@ public class floatingTextFieldView : UIView {
     public func selectField(type: FieldType){
         if type == .normal {
             print("----> normal field")
-            
+            FloatingTextField.keyboardType = .default
         }
         else if type == .URL {
             print("----> URL field")
+            FloatingTextField.keyboardType = .URL
+            
         }
         else if type == .email {
             print("----> email field")
+            FloatingTextField.keyboardType = .emailAddress
+           
         }
         else if type == .numberPad {
             print("----> numberpad field")
@@ -88,7 +93,14 @@ public class floatingTextFieldView : UIView {
         }
         else if type == .number{
             print("----> number field")
+            FloatingTextField.keyboardType = .numbersAndPunctuation
         }
+        else {
+            print("----> password field")
+            FloatingTextField.isSecureTextEntry = true
+        }
+        FloatingTextField.autocorrectionType = .no
+        FloatingTextField.autocapitalizationType = .none
     }
   
    public func showFloatinglabel(){
