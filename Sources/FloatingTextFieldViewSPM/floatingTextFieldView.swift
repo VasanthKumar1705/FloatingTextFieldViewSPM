@@ -80,6 +80,7 @@ public class floatingTextFieldView : UIView {
         }
         else if FieldType == .numberPad {
             print("----> numberpad field")
+            FloatingTextField.keyboardType = .numberPad
         }
         else if FieldType == .number{
             print("----> number field")
