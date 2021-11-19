@@ -95,7 +95,7 @@ public class floatingTextFieldView : UIView {
             print("----> number field")
             FloatingTextField.keyboardType = .numbersAndPunctuation
         }
-        else {
+        else if type == .password{
             print("----> password field")
             FloatingTextField.isSecureTextEntry = true
         }
