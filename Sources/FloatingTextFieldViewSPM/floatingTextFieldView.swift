@@ -68,26 +68,28 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
         FloatingPlaceholderLabel.isHidden = true
         
-        if FieldType == .normal {
+        
+    }
+    
+    public func selectField(type: FieldType){
+        if type == .normal {
             print("----> normal field")
             
         }
-        else if FieldType == .URL {
+        else if type == .URL {
             print("----> URL field")
         }
-        else if FieldType == .email {
+        else if type == .email {
             print("----> email field")
         }
-        else if FieldType == .numberPad {
+        else if type == .numberPad {
             print("----> numberpad field")
             FloatingTextField.keyboardType = .numberPad
         }
-        else if FieldType == .number{
+        else if type == .number{
             print("----> number field")
         }
     }
-    
-  
   
    public func showFloatinglabel(){
         FloatingTextFieldheight.constant = 24
