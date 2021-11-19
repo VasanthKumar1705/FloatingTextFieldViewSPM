@@ -68,7 +68,8 @@ public class floatingTextFieldView : UIView {
         FloatingTextField.textColor = UIColor.gray
         FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
         FloatingPlaceholderLabel.isHidden = true
-        
+        passwordVisiblityButton.setTitle("", for: .normal)
+
         
     }
     
