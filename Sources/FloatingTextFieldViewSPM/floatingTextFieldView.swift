@@ -124,8 +124,8 @@ public class floatingTextFieldView : UIView {
             errorlabel.isHidden = false
         } else {
             print("Password is filled")
-            FloatingPlaceholderLabel.textColor = .black
-            contentView.layer.borderColor = UIColor.black.cgColor
+            FloatingPlaceholderLabel.textColor = UIColor.darkGray
+            contentView.layer.borderColor = UIColor.gray.cgColor
             errorlabel.isHidden = true
         }
        FloatingPlaceholderLabel.isHidden = false
