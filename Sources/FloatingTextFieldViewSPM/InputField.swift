@@ -22,12 +22,10 @@ public class InputField : UIView {
     @IBOutlet public var ErrorLabel: UILabel!
     @IBOutlet var InputFieldHeight: NSLayoutConstraint!
     @IBOutlet var ContentView: UIView!
-    @IBOutlet public var PasswordVisiblityButton: UIButton!
+    @IBOutlet var PasswordVisiblityButton: UIButton!
     @IBOutlet public var FloatingTextField: UITextField!
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
-   
-    var checked : Bool = true
         public override init(frame: CGRect) {
             super.init(frame: frame)
             CommonInit()
@@ -103,7 +101,6 @@ public class InputField : UIView {
         )
     }
   
-    
    public func validation(){
         if FloatingTextField.text == "" {
             print("Password is empty")
