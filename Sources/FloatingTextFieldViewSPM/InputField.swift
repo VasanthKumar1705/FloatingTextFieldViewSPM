@@ -36,6 +36,7 @@ public class InputField :UIView {
     @IBOutlet var inputFieldHeight: NSLayoutConstraint!
     @IBOutlet var errorLabel: UILabel!
     
+    public var inputFieldSetup : InputFieldSetUp!
         public override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -55,10 +56,12 @@ public class InputField :UIView {
             Nib.frame = self.bounds
             Nib.backgroundColor = .clear
             addSubview(Nib)
+            self.setUp()
         }
    
 //    public func setUp(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
-    public func setUp(type : InputFieldSetUp) {
+     func setUp() {
+        
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
@@ -81,7 +84,7 @@ public class InputField :UIView {
         floatingPlaceholderLabel.isHidden = true
         passwordVisiblityButton.setTitle("", for: .normal)
         passwordVisiblityButton.isHidden = true
-        switch(type.fieldtype){
+        switch(inputFieldSetup.fieldtype){
         case .url :
             floatingTextField.keyboardType = .URL
         case .numberPad:
@@ -98,14 +101,14 @@ public class InputField :UIView {
         floatingTextField.autocorrectionType = .no
         floatingTextField.autocapitalizationType = .none
         }
-        errorLabel.text = type.errorText
-        errorLabel.textColor = type.errorTextColor
-        floatingTextField.placeholder = type.placeHolderText
-        floatingPlaceholderLabel.text = type.placeHolderText
-        floatingPlaceholderLabel.textColor = type.floatLabelTextColor
-        floatingPlaceholderLabel.font = type.floatLabelFont
-        floatingTextField.textColor = type.textFieldTextColor
-        floatingTextField.font = type.textFieldFont
+        errorLabel.text = inputFieldSetup.errorText
+        errorLabel.textColor = inputFieldSetup.errorTextColor
+        floatingTextField.placeholder = inputFieldSetup.placeHolderText
+        floatingPlaceholderLabel.text = inputFieldSetup.placeHolderText
+        floatingPlaceholderLabel.textColor = inputFieldSetup.floatLabelTextColor
+        floatingPlaceholderLabel.font = inputFieldSetup.floatLabelFont
+        floatingTextField.textColor = inputFieldSetup.textFieldTextColor
+        floatingTextField.font = inputFieldSetup.textFieldFont
     }
    public func showFloatinglabel(){
         inputFieldHeight.constant = 24
