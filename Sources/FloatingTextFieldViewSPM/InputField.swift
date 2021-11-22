@@ -47,7 +47,6 @@ public class InputField :UIView {
     @IBOutlet var inputFieldHeight: NSLayoutConstraint!
     @IBOutlet var errorLabel: UILabel!
     
-    public var inputFieldSetup : InputFieldSetUp!
         public override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -67,11 +66,11 @@ public class InputField :UIView {
             Nib.frame = self.bounds
             Nib.backgroundColor = .clear
             addSubview(Nib)
-            self.setUp()
+            
         }
    
 //    public func setUp(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
-     func setUp() {
+    func setUp(inputFieldSetup:InputFieldSetUp) {
         
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
