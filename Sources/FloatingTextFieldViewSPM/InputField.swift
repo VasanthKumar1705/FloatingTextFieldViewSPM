@@ -26,7 +26,7 @@ public class InputField : UIView {
     
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
-    public var FieldType : FieldType!
+   var FieldType : FieldType!
    public override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -39,13 +39,18 @@ public class InputField : UIView {
  
         func commonInit() {
             // standard initialization logic
-            let nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)![0] as! UIView
+            guard let nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
+            else {
+                print("error in load nib !!!")
+                return
+            }
             nib.frame = self.bounds
             nib.backgroundColor = .clear
             setup()
             addSubview(nib)
 
         }
+   
     
     func setup() {
         contentView.layer.borderColor = UIColor.gray.cgColor
