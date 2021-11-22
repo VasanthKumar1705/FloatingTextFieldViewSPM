@@ -26,6 +26,17 @@ public struct InputFieldSetUp {
     var floatLabelFont:UIFont
     var textFieldTextColor:UIColor
     var textFieldFont:UIFont
+    
+    init(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont){
+        self.fieldtype = fieldtype
+        self.errorText = errorText
+        self.errorTextColor = errorTextColor
+        self.placeHolderText = placeHolderText
+        self.floatLabelTextColor = floatLabelTextColor
+        self.floatLabelFont = floatLabelFont
+        self.textFieldTextColor = textFieldTextColor
+        self.textFieldFont = textFieldFont
+    }
 }
 public class InputField :UIView {
     
