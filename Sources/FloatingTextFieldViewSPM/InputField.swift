@@ -18,10 +18,10 @@ public enum FieldType {
 }
 
 public class InputField : UIView {
-    @IBOutlet var ErrorLabel: UILabel!
+    @IBOutlet public var ErrorLabel: UILabel!
     @IBOutlet var InputFieldHeight: NSLayoutConstraint!
     @IBOutlet var ContentView: UIView!
-    @IBOutlet var PasswordVisiblityButton: UIButton!
+    @IBOutlet public var PasswordVisiblityButton: UIButton!
     @IBOutlet public var FloatingTextField: UITextField!
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
