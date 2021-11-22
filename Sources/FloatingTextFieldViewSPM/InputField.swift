@@ -19,7 +19,7 @@ public enum fieldType {
 
 public class InputField : UIView {
     
-    @IBOutlet var floatingPlaceholderLabel: UILabel!
+    @IBOutlet public var floatingPlaceholderLabel: UILabel!
     @IBOutlet public var floatingTextField: UITextField!
     @IBOutlet var contentView: UIView!
     @IBOutlet var passwordVisiblityButton: UIButton!
@@ -36,9 +36,7 @@ public class InputField : UIView {
             super.init(coder: aDecoder)
             commonInit()
         }
-    
- 
- 
+     
         func commonInit() {
             guard let Nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
             else {
@@ -50,7 +48,7 @@ public class InputField : UIView {
             addSubview(Nib)
         }
    
-    public func setUp(fieldtype:fieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String) {
+    public func setUp(fieldtype:fieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
@@ -94,6 +92,10 @@ public class InputField : UIView {
         errorLabel.textColor = errorTextColor
         floatingTextField.placeholder = placeHolderText
         floatingPlaceholderLabel.text = placeHolderText
+        floatingPlaceholderLabel.textColor = floatLabelTextColor
+        floatingPlaceholderLabel.font = floatLabelFont
+        floatingTextField.textColor = textFieldTextColor
+        floatingTextField.font = textFieldFont
     }
    public func showFloatinglabel(){
         inputFieldHeight.constant = 24
