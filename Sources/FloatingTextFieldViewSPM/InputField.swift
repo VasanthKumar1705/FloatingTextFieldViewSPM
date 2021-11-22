@@ -26,7 +26,6 @@ public class InputField : UIView {
     @IBOutlet var inputFieldHeight: NSLayoutConstraint!
     @IBOutlet var errorLabel: UILabel!
     
-    var type : fieldType!
    
         public override init(frame: CGRect) {
             super.init(frame: frame)
@@ -38,11 +37,7 @@ public class InputField : UIView {
             commonInit()
         }
     
-    required init(fieldtype: fieldType){
-        super.init(frame: .zero)
-            self.type = fieldtype
-        }
-  
+ 
  
         func commonInit() {
             guard let Nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
@@ -52,11 +47,10 @@ public class InputField : UIView {
             }
             Nib.frame = self.bounds
             Nib.backgroundColor = .clear
-            setUp()
             addSubview(Nib)
         }
    
-    func setUp() {
+   public func setUp(fieldtype:fieldType) {
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
@@ -79,7 +73,7 @@ public class InputField : UIView {
         floatingPlaceholderLabel.isHidden = true
         passwordVisiblityButton.setTitle("", for: .normal)
         passwordVisiblityButton.isHidden = true
-        switch(type){
+        switch(fieldtype){
         case .URL :
             floatingTextField.keyboardType = .URL
         case .NumberPad:
