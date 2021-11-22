@@ -89,9 +89,6 @@ public class InputField : UIView {
             floatingTextField.keyboardType = .default
         floatingTextField.autocorrectionType = .no
         floatingTextField.autocapitalizationType = .none
-        case .none:
-            print("none")
-        }
     }
     
 //    public func selectField(type: fieldType){
