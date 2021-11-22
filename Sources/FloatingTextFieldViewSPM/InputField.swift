@@ -20,7 +20,7 @@ public enum fieldType {
 public class InputField : UIView {
     
     @IBOutlet var floatingPlaceholderLabel: UILabel!
-    @IBOutlet var floatingTextField: UITextField!
+    @IBOutlet public var floatingTextField: UITextField!
     @IBOutlet var contentView: UIView!
     @IBOutlet var passwordVisiblityButton: UIButton!
     @IBOutlet var inputFieldHeight: NSLayoutConstraint!
@@ -50,7 +50,7 @@ public class InputField : UIView {
             addSubview(Nib)
         }
    
-   public func setUp(fieldtype:fieldType) {
+    public func setUp(fieldtype:fieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String) {
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
@@ -90,28 +90,11 @@ public class InputField : UIView {
         floatingTextField.autocorrectionType = .no
         floatingTextField.autocapitalizationType = .none
         }
+        errorLabel.text = errorText
+        errorLabel.textColor = errorTextColor
+        floatingTextField.placeholder = placeHolderText
+        floatingPlaceholderLabel.text = placeHolderText
     }
-    
-//    public func selectField(type: fieldType){
-//        switch(type){
-//        case .URL :
-//            floatingTextField.keyboardType = .URL
-//        case .NumberPad:
-//            floatingTextField.keyboardType = .numberPad
-//        case .Email:
-//            floatingTextField.keyboardType = .emailAddress
-//        case .NumberAndPuntuation:
-//            floatingTextField.keyboardType = .numbersAndPunctuation
-//        case .Password:
-//            floatingTextField.isSecureTextEntry = true
-//            passwordVisiblityButton.isHidden = false
-//        case .Default:
-//            floatingTextField.keyboardType = .default
-//        }
-//        floatingTextField.autocorrectionType = .no
-//        floatingTextField.autocapitalizationType = .none
-//    }
-  
    public func showFloatinglabel(){
         inputFieldHeight.constant = 24
         floatingTextField.attributedPlaceholder = NSAttributedString(
