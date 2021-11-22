@@ -8,25 +8,34 @@
 import Foundation
 import UIKit
 
-public enum fieldType {
-    case Default
-    case NumberPad
-    case Email
-    case URL
-    case NumberAndPuntuation
-    case Password
+public enum FieldType {
+    case none
+    case numberPad
+    case email
+    case url
+    case numberAndPuntuation
+    case password
 }
 
-public class InputField : UIView {
+public struct InputFieldSetUp {
+    var fieldtype:FieldType
+    var errorText :String
+    var errorTextColor:UIColor
+    var placeHolderText : String
+    var floatLabelTextColor:UIColor
+    var floatLabelFont:UIFont
+    var textFieldTextColor:UIColor
+    var textFieldFont:UIFont
+}
+public class InputField :UIView {
     
-    @IBOutlet public var floatingPlaceholderLabel: UILabel!
-    @IBOutlet public var floatingTextField: UITextField!
+    @IBOutlet var floatingPlaceholderLabel: UILabel!
+    @IBOutlet var floatingTextField: UITextField!
     @IBOutlet var contentView: UIView!
     @IBOutlet var passwordVisiblityButton: UIButton!
     @IBOutlet var inputFieldHeight: NSLayoutConstraint!
     @IBOutlet var errorLabel: UILabel!
     
-   
         public override init(frame: CGRect) {
             super.init(frame: frame)
             commonInit()
@@ -48,7 +57,8 @@ public class InputField : UIView {
             addSubview(Nib)
         }
    
-    public func setUp(fieldtype:fieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
+//    public func setUp(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
+    public func setUp(type : InputFieldSetUp) {
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
@@ -71,31 +81,31 @@ public class InputField : UIView {
         floatingPlaceholderLabel.isHidden = true
         passwordVisiblityButton.setTitle("", for: .normal)
         passwordVisiblityButton.isHidden = true
-        switch(fieldtype){
-        case .URL :
+        switch(type.fieldtype){
+        case .url :
             floatingTextField.keyboardType = .URL
-        case .NumberPad:
+        case .numberPad:
             floatingTextField.keyboardType = .numberPad
-        case .Email:
+        case .email:
             floatingTextField.keyboardType = .emailAddress
-        case .NumberAndPuntuation:
+        case .numberAndPuntuation:
             floatingTextField.keyboardType = .numbersAndPunctuation
-        case .Password:
+        case .password:
             floatingTextField.isSecureTextEntry = true
             passwordVisiblityButton.isHidden = false
-        case .Default:
+        case .none:
             floatingTextField.keyboardType = .default
         floatingTextField.autocorrectionType = .no
         floatingTextField.autocapitalizationType = .none
         }
-        errorLabel.text = errorText
-        errorLabel.textColor = errorTextColor
-        floatingTextField.placeholder = placeHolderText
-        floatingPlaceholderLabel.text = placeHolderText
-        floatingPlaceholderLabel.textColor = floatLabelTextColor
-        floatingPlaceholderLabel.font = floatLabelFont
-        floatingTextField.textColor = textFieldTextColor
-        floatingTextField.font = textFieldFont
+        errorLabel.text = type.errorText
+        errorLabel.textColor = type.errorTextColor
+        floatingTextField.placeholder = type.placeHolderText
+        floatingPlaceholderLabel.text = type.placeHolderText
+        floatingPlaceholderLabel.textColor = type.floatLabelTextColor
+        floatingPlaceholderLabel.font = type.floatLabelFont
+        floatingTextField.textColor = type.textFieldTextColor
+        floatingTextField.font = type.textFieldFont
     }
    public func showFloatinglabel(){
         inputFieldHeight.constant = 24
