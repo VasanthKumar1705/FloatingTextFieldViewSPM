@@ -56,8 +56,6 @@ public class InputField : UIView {
         ContentView.layer.cornerRadius = 12
         ContentView.layer.masksToBounds = true
         InputFieldHeight.constant = 45
-        FloatingTextField.autocorrectionType = .no
-        PasswordVisiblityButton.isHidden = true
         ErrorLabel.isHidden = true
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingTextField.placeholder ?? "placehoder",
@@ -66,12 +64,14 @@ public class InputField : UIView {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)
             ]
         )
-        FloatingPlaceholderLabel.font =  UIFont.systemFont(ofSize: 12)
-        FloatingPlaceholderLabel.textColor = UIColor.darkGray
         FloatingTextField.textColor = UIColor.gray
         FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
+        FloatingTextField.autocorrectionType = .no
+        FloatingPlaceholderLabel.font =  UIFont.systemFont(ofSize: 12)
+        FloatingPlaceholderLabel.textColor = UIColor.darkGray
         FloatingPlaceholderLabel.isHidden = true
         PasswordVisiblityButton.setTitle("", for: .normal)
+        PasswordVisiblityButton.isHidden = true
     }
     
     public func selectField(type: FieldType){
