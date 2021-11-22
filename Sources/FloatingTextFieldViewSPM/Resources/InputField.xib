@@ -52,7 +52,7 @@
                             </constraints>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="eye.fill" catalog="system"/>
+                            <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
                             <connections>
                                 <action selector="PasswordVisiblityButtonTapped:" destination="-1" eventType="touchUpInside" id="UQC-SR-33c"/>
                             </connections>
@@ -95,7 +95,7 @@
         </view>
     </objects>
     <resources>
-        <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
