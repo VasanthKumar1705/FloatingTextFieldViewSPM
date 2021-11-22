@@ -18,6 +18,7 @@ public enum FieldType {
 }
 
 public class InputField : UIView {
+    
     @IBOutlet public var ErrorLabel: UILabel!
     @IBOutlet var InputFieldHeight: NSLayoutConstraint!
     @IBOutlet var ContentView: UIView!
@@ -26,7 +27,6 @@ public class InputField : UIView {
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
    
-//    var FieldType : FieldType!
     var checked : Bool = true
         public override init(frame: CGRect) {
             super.init(frame: frame)
@@ -76,36 +76,6 @@ public class InputField : UIView {
     }
     
     public func selectField(type: FieldType){
-//        if type == .DefaultType {
-//            print("----> normal field")
-//            FloatingTextField.keyboardType = .default
-//        }
-//        else if type == .URL {
-//            print("----> URL field")
-//            FloatingTextField.keyboardType = .URL
-//
-//        }
-//        else if type == .Email {
-//            print("----> email field")
-//            FloatingTextField.keyboardType = .emailAddress
-//
-//        }
-//        else if type == .NumberPad {
-//            print("----> numberpad field")
-//            FloatingTextField.keyboardType = .numberPad
-//        }
-//        else if type == .NumberAndPuntuation{
-//            print("----> number field")
-//            FloatingTextField.keyboardType = .numbersAndPunctuation
-//        }
-//        else if type == .Password{
-//            print("----> password field")
-//            FloatingTextField.isSecureTextEntry = true
-//            PasswordVisiblityButton.isHidden = false
-//        }
-//        FloatingTextField.autocorrectionType = .no
-//        FloatingTextField.autocapitalizationType = .none
-        
         switch(type){
         case .URL :
             FloatingTextField.keyboardType = .URL
@@ -185,17 +155,6 @@ public class InputField : UIView {
     }
     
     @IBAction func PasswordVisiblityButtonTapped(_ sender: Any) {
-        
-        
-//        if checked {
-//           print("---> true")
-//            FloatingTextField.isSecureTextEntry = false
-//            checked = false
-//        }else{
-//            print("---> false")
-//            FloatingTextField.isSecureTextEntry = true
-//            checked = true
-//        }
         FloatingTextField.isSecureTextEntry.toggle()
     }
     
