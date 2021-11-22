@@ -9,36 +9,34 @@ import Foundation
 import UIKit
 
 public enum FieldType {
-    case normal
-    case numberPad
-    case email
+    case DefaultType
+    case NumberPad
+    case Email
     case URL
-    case number
-    case password
+    case NumberAndPuntuation
+    case Password
 }
 
 public class InputField : UIView {
-    @IBOutlet public var errorlabel: UILabel!
-    @IBOutlet public var FloatingTextFieldheight: NSLayoutConstraint!
-    @IBOutlet public var contentView: UIView!
-    @IBOutlet public var passwordVisiblityButton: UIButton!
+    @IBOutlet var ErrorLabel: UILabel!
+    @IBOutlet var InputFieldHeight: NSLayoutConstraint!
+    @IBOutlet var ContentView: UIView!
+    @IBOutlet var PasswordVisiblityButton: UIButton!
     @IBOutlet public var FloatingTextField: UITextField!
-    
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
-   var FieldType : FieldType!
-   public override init(frame: CGRect) {
+    var FieldType : FieldType!
+        public override init(frame: CGRect) {
             super.init(frame: frame)
-            commonInit()
+            CommonInit()
         }
     
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
-            commonInit()
+            CommonInit()
         }
  
-        func commonInit() {
-            // standard initialization logic
+        func CommonInit() {
             guard let Nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
             else {
                 print("error in load nib !!!")
@@ -46,22 +44,20 @@ public class InputField : UIView {
             }
             Nib.frame = self.bounds
             Nib.backgroundColor = .clear
-            setup()
+            SetUp()
             addSubview(Nib)
-
         }
    
-    
-    func setup() {
-        contentView.backgroundColor = .white
-        contentView.layer.borderColor = UIColor.gray.cgColor
-        contentView.layer.borderWidth = 1
-        contentView.layer.cornerRadius = 12
-        contentView.layer.masksToBounds = true
-        FloatingTextFieldheight.constant = 45
+    func SetUp() {
+        ContentView.backgroundColor = .white
+        ContentView.layer.borderColor = UIColor.gray.cgColor
+        ContentView.layer.borderWidth = 1
+        ContentView.layer.cornerRadius = 12
+        ContentView.layer.masksToBounds = true
+        InputFieldHeight.constant = 45
         FloatingTextField.autocorrectionType = .no
-        passwordVisiblityButton.isHidden = true
-        errorlabel.isHidden = true
+        PasswordVisiblityButton.isHidden = true
+        ErrorLabel.isHidden = true
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingTextField.placeholder ?? "placehoder",
             attributes: [
@@ -74,13 +70,11 @@ public class InputField : UIView {
         FloatingTextField.textColor = UIColor.gray
         FloatingTextField.font =  UIFont.systemFont(ofSize: 16)
         FloatingPlaceholderLabel.isHidden = true
-        passwordVisiblityButton.setTitle("", for: .normal)
-
-        
+        PasswordVisiblityButton.setTitle("", for: .normal)
     }
     
     public func selectField(type: FieldType){
-        if type == .normal {
+        if type == .DefaultType {
             print("----> normal field")
             FloatingTextField.keyboardType = .default
         }
@@ -89,30 +83,30 @@ public class InputField : UIView {
             FloatingTextField.keyboardType = .URL
             
         }
-        else if type == .email {
+        else if type == .Email {
             print("----> email field")
             FloatingTextField.keyboardType = .emailAddress
            
         }
-        else if type == .numberPad {
+        else if type == .NumberPad {
             print("----> numberpad field")
             FloatingTextField.keyboardType = .numberPad
         }
-        else if type == .number{
+        else if type == .NumberAndPuntuation{
             print("----> number field")
             FloatingTextField.keyboardType = .numbersAndPunctuation
         }
-        else if type == .password{
+        else if type == .Password{
             print("----> password field")
             FloatingTextField.isSecureTextEntry = true
-            passwordVisiblityButton.isHidden = false
+            PasswordVisiblityButton.isHidden = false
         }
         FloatingTextField.autocorrectionType = .no
         FloatingTextField.autocapitalizationType = .none
     }
   
    public func showFloatinglabel(){
-        FloatingTextFieldheight.constant = 24
+        InputFieldHeight.constant = 24
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -128,16 +122,16 @@ public class InputField : UIView {
                 string: FloatingPlaceholderLabel.text!,
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
             )
-            contentView.layer.borderColor = UIColor.red.cgColor
-            errorlabel.isHidden = false
+            ContentView.layer.borderColor = UIColor.red.cgColor
+            ErrorLabel.isHidden = false
         } else {
             print("Password is filled")
             FloatingPlaceholderLabel.textColor = UIColor.darkGray
-            contentView.layer.borderColor = UIColor.gray.cgColor
-            errorlabel.isHidden = true
+            ContentView.layer.borderColor = UIColor.gray.cgColor
+            ErrorLabel.isHidden = true
         }
        FloatingPlaceholderLabel.isHidden = false
-        FloatingTextFieldheight.constant = 24
+       InputFieldHeight.constant = 24
     }
     
    public func successValidation(){
@@ -147,27 +141,27 @@ public class InputField : UIView {
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
         )
-        contentView.layer.borderColor = UIColor.red.cgColor
-        errorlabel.isHidden = false
-        FloatingTextFieldheight.constant = 24
+        ContentView.layer.borderColor = UIColor.red.cgColor
+        ErrorLabel.isHidden = false
+        InputFieldHeight.constant = 24
     }
   public  func failureValidation() {
         print("Password is filled")
         FloatingPlaceholderLabel.textColor = .black
-        contentView.layer.borderColor = UIColor.black.cgColor
-        errorlabel.isHidden = true
-        FloatingTextFieldheight.constant = 24
+        ContentView.layer.borderColor = UIColor.black.cgColor
+        ErrorLabel.isHidden = true
+        InputFieldHeight.constant = 24
     }
    public func clearAll(){
         FloatingTextField.text = ""
-        FloatingTextFieldheight.constant = 45
+        InputFieldHeight.constant = 45
         FloatingTextField.attributedPlaceholder = NSAttributedString(
             string: FloatingPlaceholderLabel.text!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-        errorlabel.isHidden = true
+        ErrorLabel.isHidden = true
         FloatingPlaceholderLabel.textColor = .black
-        contentView.layer.borderColor = UIColor.gray.cgColor
+        ContentView.layer.borderColor = UIColor.gray.cgColor
     }
     
     

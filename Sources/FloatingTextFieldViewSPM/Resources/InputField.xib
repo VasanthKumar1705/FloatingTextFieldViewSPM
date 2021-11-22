@@ -11,12 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="in">
             <connections>
+                <outlet property="ContentView" destination="QB7-We-EMt" id="0sN-4b-yJp"/>
+                <outlet property="ErrorLabel" destination="3Og-Uz-a3t" id="PHK-TK-28G"/>
                 <outlet property="FloatingPlaceholderLabel" destination="8aE-Ge-G0I" id="fO4-Dm-S4c"/>
                 <outlet property="FloatingTextField" destination="RUI-SY-auJ" id="oDY-N1-9RT"/>
-                <outlet property="FloatingTextFieldheight" destination="dh2-1e-vLb" id="ZwE-1F-mdn"/>
-                <outlet property="contentView" destination="QB7-We-EMt" id="N5B-1M-G35"/>
-                <outlet property="errorlabel" destination="3Og-Uz-a3t" id="kGs-UE-LN5"/>
-                <outlet property="passwordVisiblityButton" destination="E4h-Yl-OdZ" id="ZYW-rq-3Ms"/>
+                <outlet property="InputFieldHeight" destination="dh2-1e-vLb" id="Vmo-2k-wAR"/>
+                <outlet property="PasswordVisiblityButton" destination="E4h-Yl-OdZ" id="g10-y3-k3W"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
