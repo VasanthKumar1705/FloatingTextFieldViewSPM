@@ -53,6 +53,9 @@
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="eye.fill" catalog="system"/>
+                            <connections>
+                                <action selector="PasswordVisiblityButtonTapped:" destination="-1" eventType="touchUpInside" id="UQC-SR-33c"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

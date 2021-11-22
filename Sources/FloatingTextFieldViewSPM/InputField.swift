@@ -26,6 +26,7 @@ public class InputField : UIView {
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
     var FieldType : FieldType!
+    var checked : Bool = false
         public override init(frame: CGRect) {
             super.init(frame: frame)
             CommonInit()
@@ -164,5 +165,18 @@ public class InputField : UIView {
         ContentView.layer.borderColor = UIColor.gray.cgColor
     }
     
+    @IBAction func PasswordVisiblityButtonTapped(_ sender: Any) {
+        
+        
+        if checked {
+           print("---> true")
+            FloatingTextField.isSecureTextEntry = false
+            checked = false
+        }else{
+            print("---> false")
+            FloatingTextField.isSecureTextEntry = true
+            checked = true
+        }
+    }
     
 }
