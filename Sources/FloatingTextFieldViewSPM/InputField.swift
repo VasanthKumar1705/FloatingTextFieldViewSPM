@@ -27,7 +27,7 @@ public struct InputFieldSetUp {
     var textFieldTextColor:UIColor
     var textFieldFont:UIFont
     
-    init(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont){
+  public init(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont){
         self.fieldtype = fieldtype
         self.errorText = errorText
         self.errorTextColor = errorTextColor
