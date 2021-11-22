@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public enum FieldType {
-    case DefaultType
+    case Default
     case NumberPad
     case Email
     case URL
@@ -25,7 +25,8 @@ public class InputField : UIView {
     @IBOutlet public var FloatingTextField: UITextField!
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
-    var FieldType : FieldType!
+   
+//    var FieldType : FieldType!
     var checked : Bool = true
         public override init(frame: CGRect) {
             super.init(frame: frame)
@@ -75,32 +76,50 @@ public class InputField : UIView {
     }
     
     public func selectField(type: FieldType){
-        if type == .DefaultType {
-            print("----> normal field")
-            FloatingTextField.keyboardType = .default
-        }
-        else if type == .URL {
-            print("----> URL field")
+//        if type == .DefaultType {
+//            print("----> normal field")
+//            FloatingTextField.keyboardType = .default
+//        }
+//        else if type == .URL {
+//            print("----> URL field")
+//            FloatingTextField.keyboardType = .URL
+//
+//        }
+//        else if type == .Email {
+//            print("----> email field")
+//            FloatingTextField.keyboardType = .emailAddress
+//
+//        }
+//        else if type == .NumberPad {
+//            print("----> numberpad field")
+//            FloatingTextField.keyboardType = .numberPad
+//        }
+//        else if type == .NumberAndPuntuation{
+//            print("----> number field")
+//            FloatingTextField.keyboardType = .numbersAndPunctuation
+//        }
+//        else if type == .Password{
+//            print("----> password field")
+//            FloatingTextField.isSecureTextEntry = true
+//            PasswordVisiblityButton.isHidden = false
+//        }
+//        FloatingTextField.autocorrectionType = .no
+//        FloatingTextField.autocapitalizationType = .none
+        
+        switch(type){
+        case .URL :
             FloatingTextField.keyboardType = .URL
-            
-        }
-        else if type == .Email {
-            print("----> email field")
-            FloatingTextField.keyboardType = .emailAddress
-           
-        }
-        else if type == .NumberPad {
-            print("----> numberpad field")
+        case .NumberPad:
             FloatingTextField.keyboardType = .numberPad
-        }
-        else if type == .NumberAndPuntuation{
-            print("----> number field")
+        case .Email:
+            FloatingTextField.keyboardType = .emailAddress
+        case .NumberAndPuntuation:
             FloatingTextField.keyboardType = .numbersAndPunctuation
-        }
-        else if type == .Password{
-            print("----> password field")
+        case .Password:
             FloatingTextField.isSecureTextEntry = true
             PasswordVisiblityButton.isHidden = false
+        case .Default:
+            FloatingTextField.keyboardType = .default
         }
         FloatingTextField.autocorrectionType = .no
         FloatingTextField.autocapitalizationType = .none
@@ -168,15 +187,16 @@ public class InputField : UIView {
     @IBAction func PasswordVisiblityButtonTapped(_ sender: Any) {
         
         
-        if checked {
-           print("---> true")
-            FloatingTextField.isSecureTextEntry = false
-            checked = false
-        }else{
-            print("---> false")
-            FloatingTextField.isSecureTextEntry = true
-            checked = true
-        }
+//        if checked {
+//           print("---> true")
+//            FloatingTextField.isSecureTextEntry = false
+//            checked = false
+//        }else{
+//            print("---> false")
+//            FloatingTextField.isSecureTextEntry = true
+//            checked = true
+//        }
+        FloatingTextField.isSecureTextEntry.toggle()
     }
     
 }
