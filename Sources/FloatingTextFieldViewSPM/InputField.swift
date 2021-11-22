@@ -26,7 +26,7 @@ public class InputField : UIView {
     @IBOutlet public var FloatingPlaceholderLabel: UILabel!
     
     var FieldType : FieldType!
-    var checked : Bool = false
+    var checked : Bool = true
         public override init(frame: CGRect) {
             super.init(frame: frame)
             CommonInit()
