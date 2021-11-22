@@ -39,15 +39,15 @@ public class InputField : UIView {
  
         func commonInit() {
             // standard initialization logic
-            guard let nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
+            guard let Nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
             else {
                 print("error in load nib !!!")
                 return
             }
-            nib.frame = self.bounds
-            nib.backgroundColor = .clear
+            Nib.frame = self.bounds
+            Nib.backgroundColor = .red
             setup()
-            addSubview(nib)
+            addSubview(Nib)
 
         }
    
