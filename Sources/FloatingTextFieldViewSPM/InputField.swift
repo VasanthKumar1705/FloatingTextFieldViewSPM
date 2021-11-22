@@ -47,6 +47,8 @@ public class InputField : UIView {
             Nib.frame = self.bounds
             Nib.backgroundColor = .clear
             Nib.layer.cornerRadius = 12
+            Nib.layer.masksToBounds = true
+
             setup()
             addSubview(Nib)
 
