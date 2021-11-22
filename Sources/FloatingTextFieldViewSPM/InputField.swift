@@ -38,10 +38,11 @@ public class InputField : UIView {
             commonInit()
         }
     
-        init(fieldtype: fieldType){
-            super.init(frame: UIScreen.main.bounds);
+    required init(fieldtype: fieldType){
+        super.init(frame: .zero)
             self.type = fieldtype
         }
+  
  
         func commonInit() {
             guard let Nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)?[0] as? UIView
