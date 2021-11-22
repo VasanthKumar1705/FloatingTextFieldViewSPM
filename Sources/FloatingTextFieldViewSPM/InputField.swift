@@ -17,7 +17,7 @@ public enum FieldType {
     case password
 }
 
-public class floatingTextFieldView : UIView {
+public class InputField : UIView {
     @IBOutlet public var errorlabel: UILabel!
     @IBOutlet public var FloatingTextFieldheight: NSLayoutConstraint!
     @IBOutlet public var contentView: UIView!
@@ -39,7 +39,7 @@ public class floatingTextFieldView : UIView {
  
         func commonInit() {
             // standard initialization logic
-            let nib = Bundle.module.loadNibNamed("floatingTextFieldView", owner: self, options: nil)![0] as! UIView
+            let nib = Bundle.module.loadNibNamed("InputField", owner: self, options: nil)![0] as! UIView
             nib.frame = self.bounds
             nib.backgroundColor = .clear
             setup()
