@@ -70,7 +70,7 @@ public class InputField :UIView {
         }
    
 //    public func setUp(fieldtype:FieldType , errorText :String , errorTextColor:UIColor ,placeHolderText : String , floatLabelTextColor:UIColor,floatLabelFont:UIFont,textFieldTextColor:UIColor,textFieldFont:UIFont) {
-    func setUp(inputFieldSetup:InputFieldSetUp) {
+   public func setUp(inputFieldSetup:InputFieldSetUp) {
         
         contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
