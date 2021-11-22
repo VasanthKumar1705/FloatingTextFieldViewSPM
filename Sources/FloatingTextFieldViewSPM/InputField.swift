@@ -45,7 +45,7 @@ public class InputField : UIView {
                 return
             }
             Nib.frame = self.bounds
-            Nib.backgroundColor = .red
+            Nib.backgroundColor = .clear
             setup()
             addSubview(Nib)
 
@@ -53,6 +53,7 @@ public class InputField : UIView {
    
     
     func setup() {
+        contentView.backgroundColor = .white
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 12
